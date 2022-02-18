@@ -1,6 +1,5 @@
 #pragma once
-class Account
-{
+class Account {
 private:
     double balance;
     double rate;
