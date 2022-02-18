@@ -1,4 +1,13 @@
+/*
+     CS281 – Spring 2022
+     Lab1Exercise1
+     Christopher Simaan
+     02/19/22
+     Accounting program that keeps track of a balance with a varying annual interest rate
+*/
+
 #include "Account.h"
+#include <cmath>
 // constructor
 Account::Account() {
     balance = 0;
@@ -9,23 +18,24 @@ Account::Account(double startingBalance) {
     rate = .05;
 }
 double Account::getBalance() {
-    return balance;
+    return round(balance * 100.0) / 100.0;
 }
 double Account::getRate() {
     return rate;
 }
 bool Account::deposit(double x) {
-    balance = balance + x;
+    balance += x;
 
     return true;
 }
 bool Account::withdrawl(double x) {
-    balance = balance - x;
+    balance -= x;
 
     return true;
 }
 bool Account::accrueinterest(int x) {
-    balance = (((balance * rate) / 12) + balance) * x;
-
+    for (int i = 0; i < x; i++) {
+        balance = ((balance * rate) / 12) + balance;
+    }
     return true;
 }

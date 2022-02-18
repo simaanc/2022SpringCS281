@@ -1,9 +1,13 @@
-// Lab1Exercise1.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+/*
+     CS281 – Spring 2022
+     Lab1Exercise1
+     Christopher Simaan
+     02/19/22
+     Accounting program that keeps track of a balance with a varying annual interest rate
+*/
 
 #include "Account.h"
 #include <iostream>
-
 
 using namespace std;
 
@@ -17,43 +21,75 @@ int main() {
     double withdrawl = 0;
     int months = 0;
     Account acct(100.00); // create instance of account
+
     do {
         input = menu();
         switch (input) {
         case 1:
-            cout << acct.getBalance();
+            //output balance in dollar amount
+            cout << "$" << acct.getBalance();
             pauseScreen();
             break;
         case 2:
-            cout << acct.getRate();
+            //output rate in percentage
+            cout << (acct.getRate() * 100) << "%";
             pauseScreen();
             break;
         case 3:
-            cout << "How much would you like to deposit? " << endl;
-            cin >> deposit;
+            cout << "How much would you like to deposit? ";
+            
+            //get deposit amount + input verification
+            while (!(cin >> deposit) || deposit < 0) {
+                cout << "Please enter a valid amount: ";
+                cin.clear();
+                cin.ignore(1000, '\n');
+            }
+
             acct.deposit(deposit);
+            
+            //confirm and output current balance
             cout << "Deposited: $" << deposit << endl;
-            cout << "Balance: $" << acct.getBalance() << endl;
+            cout << "New Balance: $" << acct.getBalance() << endl;
+
             pauseScreen();
             break;
         case 4:
-            cout << "How much would you like to withdrawl? " << endl;
-            cin >> withdrawl;
-            if (withdrawl <= acct.getBalance()) {
-                acct.withdrawl(withdrawl);
-                cout << "Withdrew: $" << withdrawl << endl;
-                cout << "Balance: $" << acct.getBalance() << endl;
-            } else {
-                cout << "Cannot withdraw $" << withdrawl << " you only have $" << acct.getBalance() << endl;
+            cout << "How much would you like to withdraw? ";
+            
+            //get withdrawl amount + input verification
+            while (!(cin >> withdrawl) || withdrawl > acct.getBalance() || withdrawl < 0) {
+                if (withdrawl > acct.getBalance()) {
+                    cout << "Cannot withdraw $" << withdrawl << " you only have $" << acct.getBalance() << endl;
+                }
+                cout << "Please enter a valid amount: ";
+                cin.clear();
+                cin.ignore(1000, '\n');
             }
+
+            acct.withdrawl(withdrawl);
+            //confirm and output
+            cout << "Withdrew: $" << withdrawl << endl;
+            cout << "New Balance: $" << acct.getBalance() << endl;
+
             pauseScreen();
             break;
         case 5:
-            cout << "How many months to accrue interest?" << endl;
-            cin >> months;
+            cout << "How many months to accrue interest? ";
+            
+            //get number of months + input verification
+            while (!(cin >> months) || months < 0) {
+                cout << "Please enter a valid number of months: ";
+                cin.clear();
+                cin.ignore(1000, '\n');
+            }
+            
             acct.accrueinterest(months);
+            
+            //output new balance
             cout << "Balance With Accrued Interest: $" << acct.getBalance() << endl;
+            
             pauseScreen();
+            
             break;
         case 6:
             cout << "Goodbye";
