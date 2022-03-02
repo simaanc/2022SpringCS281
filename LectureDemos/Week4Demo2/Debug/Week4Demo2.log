@@ -1,0 +1,7 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Week3Demo2.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  UnsortedList.cpp
+  Week4Demo2.cpp
+E:\2022SpringCS281\LectureDemos\Week4Demo2\Week4Demo2.cpp(27,37): warning C4227:  anachronism used: qualifiers on reference are ignored
+  Generating Code...
+E:\2022SpringCS281\LectureDemos\Week4Demo2\Week4Demo2.cpp(78,43): warning C4227:  anachronism used: qualifiers on reference are ignored
+  Week4Demo2.vcxproj -> E:\2022SpringCS281\LectureDemos\Week4Demo2\Debug\Week4Demo2.exe
