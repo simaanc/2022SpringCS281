@@ -23,8 +23,8 @@ void pauseScreen();
 
 void addToList(int*); // adds integer to integer array
 void displayList(int*); //displays all items in array
-void dispSum(int*); //gives sum of all elements in array
-void dispAverage(int*); //gives average of elements in array.
+int dispSum(int*); //gives sum of all elements in array
+double dispAverage(int*); //gives average of elements in array.
 
 unsigned short SIZE = 0;
 
@@ -33,25 +33,31 @@ int main()
 	int input = 0;
 	int arrayList[10];
 
+	//begin menu choice
 	do {
 		input = menu();
 		switch (input) {
+			//exit program if input = 0
 			case 0:
 				break;
 			case 1:
+				//addToList function with arrayList pointer
 				addToList(arrayList);
 				pauseScreen();
 				break;
 			case 2: 
+				//displayList function with arrayList pointer
 				displayList(arrayList);
 				pauseScreen();
 				break;
 			case 3: 
-				dispSum(arrayList);
+				//displaySum function with arrayList pointer
+				cout << "The Sum is " << dispSum(arrayList) << "!" << endl;
 				pauseScreen();
 				break;
 			case 4: 
-				dispAverage(arrayList);
+				//dispAverage function with arrayList pointer
+				cout << "The Average is " << fixed << setprecision(2) << dispAverage(arrayList) << "!" << endl;
 				pauseScreen();
 				break;
 		}
@@ -62,54 +68,69 @@ int main()
 
 void addToList(int *arrayList)
 {
+	int input;
+
+	//verification that array isn't full
 	if (SIZE == 10) {
 		cout << "Max number reached" << endl;
 	}
 	else {
-		int input;
 		cout << "Enter a number into the array: ";
-		cin >> input;
+
+		//verification that it's a valid number
+		while (!(cin >> input)) {
+			cout << "Please enter a valid number into the array: ";
+			cin.clear();
+			cin.ignore(1000, '\n');
+		}
+
+		//add number to array
 		arrayList[SIZE] = input;
+		//increase counter by 1
 		SIZE++;
 	}
 }
 
 void displayList(int *arrayList) {
+	//verifiy that array isn't empty
 	if (SIZE == 0) {
 		cout << "No numbers in list" << endl;
 	}
 	else {
+		//go through the array and output each valid value
 		for (int i = 0; i < SIZE; ++i) {
 			cout << arrayList[i] << endl;
 		}
 	}
 }
 
-void dispSum(int *arrayList) {
+int dispSum(int *arrayList) {
 	int sum = 0;
+	//verify that the array isn't empty
 	if (SIZE == 0) {
 		cout << "No numbers in list" << endl;
 	}
 	else {
+		//add each number in the array
 		for (int i = 0; i < SIZE; ++i) {
 			sum += arrayList[i];
 		}
-		cout << "The Sum is " << sum << "!" << endl;
+		return sum;
 	}
 }
 
-void dispAverage(int* arrayList) {
+double dispAverage(int* arrayList) {
 	double sum = 0;
 	double average = 0;
+	//verify that the array isn't empty
 	if (SIZE == 0) {
 		cout << "No numbers in list" << endl;
 	}
 	else {
-		for (int i = 0; i < SIZE; ++i) {
-			sum += arrayList[i];
-		}
+		//gets the average of each 
+		sum = dispSum(arrayList);
 		average = sum / SIZE;
-		cout << "The Average is " << fixed << setprecision(2) << average << "!" << endl;
+		return average;
 	}
 }
 

@@ -1,5 +1,7 @@
 #include <iostream>
 #include "UnsortedList.h"
+#include "UnsortedLinkList.h"
+
 using namespace std;
 
 
@@ -42,31 +44,31 @@ int main()
 	ptr = nullptr;
 
 
-	UnsortedList l1;
+	UnsortedList list1;
 
-	l1.putItem(15);
-	l1.putItem(20);
-	l1.putItem(22);
-	l1.putItem(14);
-	l1.putItem(6);
-	l1.putItem(8);
-	l1.putItem(34);
-	l1.putItem(99);
-	l1.putItem(67);
-	l1.putItem(12);
+	list1.putItem(15);
+	list1.putItem(20);
+	list1.putItem(22);
+	list1.putItem(14);
+	list1.putItem(6);
+	list1.putItem(8);
+	list1.putItem(34);
+	list1.putItem(99);
+	list1.putItem(67);
+	list1.putItem(12);
 
 
-	l1.putItem(3);
-	l1.putItem(78);
+	list1.putItem(3);
+	list1.putItem(78);
 
-	l1.deleteItem(8);
+	list1.deleteItem(8);
 
-	displayList(l1);
+	displayList(list1);
 	cout << "-----" << endl;
 
-	l1.makeEmpty();
+	list1.makeEmpty();
 
-	displayList(l1);
+	displayList(list1);
 
 	cout << "-----" << endl;
 
@@ -77,6 +79,22 @@ int main()
 	listPtr->putItem(14);
 	(*listPtr).putItem(22);
 
+	cout << "-----" << endl;
+
+	UnsortedLinkList l1;
+
+	cout << l1.getLength() << endl;
+
+	l1.putItem(15);
+	l1.putItem(8);
+	l1.putItem(99);
+	l1.putItem(2);
+
+	cout << l1.getLength() << endl;
+
+	l1.deleteItem(22);
+
+	cout << l1.getLength() << endl;
 	return 0;
 }
 

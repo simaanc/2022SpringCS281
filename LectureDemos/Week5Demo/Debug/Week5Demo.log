@@ -1,0 +1,6 @@
+﻿  SortedList.cpp
+  Source.cpp
+E:\2022SpringCS281\LectureDemos\Week5Demo\Source.cpp(6,40): warning C4227: anachronism used: qualifiers on reference are ignored
+E:\2022SpringCS281\LectureDemos\Week5Demo\Source.cpp(27,40): warning C4227: anachronism used: qualifiers on reference are ignored
+  Generating Code...
+  Week5Demo.vcxproj -> E:\2022SpringCS281\LectureDemos\Week5Demo\Debug\Week5Demo.exe

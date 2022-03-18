@@ -14,8 +14,6 @@ public:
 	}
 
 
-
-
 };
 
 class UnsortedLinkList {
@@ -23,6 +21,7 @@ class UnsortedLinkList {
 private:
 	Node* head;
 	Node* pos;
+	int size;
 
 public:
 	UnsortedLinkList();

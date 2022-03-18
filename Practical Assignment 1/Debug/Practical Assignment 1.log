@@ -1,2 +1,4 @@
 ﻿  Practical Assignment 1.cpp
+C:\Users\simaa\source\repos\2022SpringCS281\Practical Assignment 1\Practical Assignment 1.cpp(135): warning C4715: 'dispAverage': not all control paths return a value
+C:\Users\simaa\source\repos\2022SpringCS281\Practical Assignment 1\Practical Assignment 1.cpp(120): warning C4715: 'dispSum': not all control paths return a value
   Practical Assignment 1.vcxproj -> C:\Users\simaa\source\repos\2022SpringCS281\Practical Assignment 1\Debug\Practical Assignment 1.exe
