@@ -1,11 +1,13 @@
 #include <iostream>
 #include "ArrayQueue.h"
-
+#include "LinkedListQueue.h"
 
 using namespace std;
 
 int main() {
-	ArrayQueue q;
+	//ArrayQueue q;
+	LinkedListQueue q;
+
 
 	q.enqueue("Tom");
 	q.enqueue("Bill");
@@ -25,6 +27,12 @@ int main() {
 	q.enqueue("John");
 	q.enqueue("Mary");
 
+	cout << q.dequeue() << endl;
+	cout << q.dequeue() << endl;
+	cout << q.dequeue() << endl;
+	cout << q.dequeue() << endl;
+	cout << q.dequeue() << endl;
+	cout << q.dequeue() << endl;
 	cout << q.dequeue() << endl;
 	cout << q.dequeue() << endl;
 	cout << q.dequeue() << endl;
