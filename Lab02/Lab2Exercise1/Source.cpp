@@ -1,3 +1,12 @@
+/*
+	CS281 – Spring 2022
+	Lab 2: Phone Book
+	Christopher Simaan
+	March 26th 2022
+	Create an address book that sorts contacts alphabetically
+	and include a way to find and edit the contact
+*/
+
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -135,6 +144,7 @@ int main() {
 	return 0;
 }
 
+//Create a menu
 int menu() {
 	int input;
 	cout << "***Main Menu***" << endl

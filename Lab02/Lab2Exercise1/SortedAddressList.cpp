@@ -1,7 +1,17 @@
+/*
+	CS281 – Spring 2022
+	Lab 2: Phone Book
+	Christopher Simaan
+	March 26th 2022
+	Create an address book that sorts contacts alphabetically
+	and include a way to find and edit the contact
+*/
+
 #include "SortedAddressList.h"
 
 SortedAddressList::SortedAddressList()
 {
+	//Constructor
 	head = nullptr;
 	pos = nullptr;
 	size = 0;
@@ -9,11 +19,13 @@ SortedAddressList::SortedAddressList()
 
 SortedAddressList::~SortedAddressList()
 {
+	//Deconstructor
 	makeEmpty();
 }
 
 void SortedAddressList::putContact(string fninput, string lninput, string ainput, string pinput)
 {
+	//Creates the contact in alphabetical order
 	Node* temp = new Node(fninput, lninput, ainput, pinput);
 	if (head == nullptr) {
 		head = temp;
@@ -50,8 +62,9 @@ void SortedAddressList::putContact(string fninput, string lninput, string ainput
 	pos = nullptr;
 }
 
+//Contact delete but with a search
 void SortedAddressList::deleteContact(string fname, string lname) {
-	//set pos
+	//set pos to be at the contact we want deleted
 	findItem(fname, lname);
 
 	if (pos != nullptr) {
@@ -76,6 +89,7 @@ void SortedAddressList::deleteContact(string fname, string lname) {
 	}
 }
 
+//Deleted currently selected contact
 void SortedAddressList::deleteContact()
 {
 	if (pos != nullptr) {
@@ -100,6 +114,7 @@ void SortedAddressList::deleteContact()
 	}
 }
 
+//Empty out linked list
 void SortedAddressList::makeEmpty()
 {
 	pos = head;
@@ -113,6 +128,7 @@ void SortedAddressList::makeEmpty()
 	size = 0;
 }
 
+//Display entire list
 void SortedAddressList::displayList()
 {
 	pos = head;
@@ -125,6 +141,7 @@ void SortedAddressList::displayList()
 	}
 }
 
+//Find a contact based on first and last name
 bool SortedAddressList::findItem(string fninput, string lninput)
 {
 	if (head == nullptr) {
@@ -147,6 +164,7 @@ bool SortedAddressList::findItem(string fninput, string lninput)
 	return found;
 }
 
+//Display contact information
 void SortedAddressList::getItem()
 {
 	if (pos != nullptr) {

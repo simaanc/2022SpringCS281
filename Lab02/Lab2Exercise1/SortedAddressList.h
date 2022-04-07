@@ -1,3 +1,12 @@
+/*
+	CS281 – Spring 2022
+	Lab 2: Phone Book
+	Christopher Simaan
+	March 26th 2022
+	Create an address book that sorts contacts alphabetically
+	and include a way to find and edit the contact
+*/
+
 #pragma once
 #include <iostream>
 #include <string>
