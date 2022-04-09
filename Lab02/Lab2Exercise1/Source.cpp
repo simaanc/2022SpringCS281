@@ -1,5 +1,5 @@
 /*
-	CS281 – Spring 2022
+	CS281 ï¿½ Spring 2022
 	Lab 2: Phone Book
 	Christopher Simaan
 	March 26th 2022
@@ -17,11 +17,12 @@ using namespace std;
 int menu();
 void clearScreen();
 void pauseScreen();
+void altpauseScreen();
 
-string selectedfirst;
-string selectedlast;
+string selectedFirst;
+string selectedLast;
 
-bool contactselected = false;
+bool contactSelected = false;
 
 int main() {
 
@@ -44,16 +45,18 @@ int main() {
 			case 1:
 				//Add Contact
 				cout << "Enter First Name: ";
-				cin >> firstname;
+                cin >> firstname;
+                cin.ignore();
 				cout << "Enter Last Name: ";
-				cin >> lastname;
-				cout << "Enter Phone Number: ";
-				cin >> phone;
-				cout << "Enter Address: ";
-				cin >> address;
+                cin >> lastname;
+                cin.ignore();
+                cout << "Enter Phone Number: ";
+                getline(cin,phone, '\n');
+                cout << "Enter Address: ";
+                getline(cin,address, '\n');
 
-				s.putContact(firstname, lastname, phone, address);
-				pauseScreen();
+                s.putContact(firstname, lastname, address, phone);
+                altpauseScreen();
 				break;
 			case 2:
 				//Find Contact
@@ -65,59 +68,61 @@ int main() {
 				if (s.findItem(firstname, lastname) == true) {
 					s.findItem(firstname, lastname);
 					cout << "Found Contact" << endl;
-					selectedfirst = firstname;
-					selectedlast = lastname;
-					contactselected = true;
+                    selectedFirst = firstname;
+                    selectedLast = lastname;
+                    contactSelected = true;
 				}
 				else {
 					cout << "Could Not Find Contact";
-					contactselected = false;
+                    contactSelected = false;
 				}
 
 				pauseScreen();
 				break;
 			case 3:
 				//Edit Contact
-				if (contactselected) {
-					cout << "Now Editing: " 
-						 << selectedfirst 
-						 << " " 
-						 << selectedlast 
-						 << endl;
+				if (contactSelected) {
+					cout << "Now Editing: "
+                         << selectedFirst
+                         << " "
+                         << selectedLast
+                         << endl;
 					s.deleteContact();
-					
-					cout << "Enter New First Name: ";
-					cin >> firstname;
-					cout << "Enter New Last Name: ";
-					cin >> lastname;
-					cout << "Enter New Phone Number: ";
-					cin >> phone;
-					cout << "Enter New Address: ";
-					cin >> address;
 
-					s.putContact(firstname, lastname, phone, address);
+                    cout << "Enter New First Name: ";
+                    cin >> firstname;
+                    cin.ignore();
+                    cout << "Enter New Last Name: ";
+                    cin >> lastname;
+                    cin.ignore();
+                    cout << "Enter New Phone Number: ";
+                    getline(cin,phone, '\n');
+                    cout << "Enter New Address: ";
+                    getline(cin,address, '\n');
+
+					s.putContact(firstname, lastname, address, phone);
 					s.findItem(firstname, lastname);
-					selectedfirst = firstname;
-					selectedlast = lastname;
+                    selectedFirst = firstname;
+                    selectedLast = lastname;
 				}
 				else {
 					cout << "No Contact Selected!" << endl;
 				}
 				
-				pauseScreen();
+				altpauseScreen();
 				break;
 			case 4:
 				//Delete Contact
-				if (contactselected) {
+				if (contactSelected) {
 					cout << "Deleted: "
-						<< selectedfirst
-						<< " "
-						<< selectedlast
+                         << selectedFirst
+                         << " "
+                         << selectedLast
 						<< endl;
 					s.deleteContact();
-					selectedfirst.clear();
-					selectedlast.clear();
-					contactselected = false;
+					selectedFirst.clear();
+					selectedLast.clear();
+                    contactSelected = false;
 				}
 				else {
 					cout << "No Contact Selected!" << endl;
@@ -128,7 +133,7 @@ int main() {
 				break;		
 			case 5:
 				//Display Contact
-				if (contactselected) {
+				if (contactSelected) {
 					s.getItem();
 				}
 				else {
@@ -155,11 +160,11 @@ int menu() {
 		<< "5. Display Current Contact" << endl
 		<< "0. Quit" << endl
 		<< endl;
-	if (contactselected) {
+	if (contactSelected) {
 		cout << "Current Contact: "
-			<< selectedfirst
-			<< " "
-			<< selectedlast
+             << selectedFirst
+             << " "
+             << selectedLast
 			<< endl;
 	}
 	else {
@@ -191,4 +196,10 @@ void pauseScreen() {
 	std::cin.ignore(1000, '\n');
 	std::cout << "\n---Enter to Continue!---\n";
 	std::cin.get();
+}
+
+void altpauseScreen() {
+    std::cin.clear();
+    std::cout << "\n---Enter to Continue!---\n";
+    std::cin.get();
 }
