@@ -1,0 +1,23 @@
+# ninja log v5
+0	1034	1652317599910000000	CMakeFiles/Chapter_2_Assignment.dir/main.cpp.o	c26a2d4eb5632825
+1	1035	1652317599910000000	CMakeFiles/Chapter_2_Assignment.dir/SquareMatrix.cpp.o	92a801e65eb8bed
+1035	1149	1652317600040000000	Chapter_2_Assignment	dbb0f17e19dc8dbe
+3	570	1652317666940000000	CMakeFiles/Chapter_2_Assignment.dir/SquareMatrix.cpp.o	92a801e65eb8bed
+570	624	1652317667000000000	Chapter_2_Assignment	dbb0f17e19dc8dbe
+3	609	1652318116080000000	CMakeFiles/Chapter_2_Assignment.dir/SquareMatrix.cpp.o	92a801e65eb8bed
+3	610	1652318116080000000	CMakeFiles/Chapter_2_Assignment.dir/main.cpp.o	c26a2d4eb5632825
+610	668	1652318116150000000	Chapter_2_Assignment	dbb0f17e19dc8dbe
+2	609	1652318165680000000	CMakeFiles/Chapter_2_Assignment.dir/SquareMatrix.cpp.o	92a801e65eb8bed
+610	664	1652318165740000000	Chapter_2_Assignment	dbb0f17e19dc8dbe
+2	596	1652318184900000000	CMakeFiles/Chapter_2_Assignment.dir/SquareMatrix.cpp.o	92a801e65eb8bed
+596	656	1652318184970000000	Chapter_2_Assignment	dbb0f17e19dc8dbe
+3	589	1652318275750000000	CMakeFiles/Chapter_2_Assignment.dir/SquareMatrix.cpp.o	92a801e65eb8bed
+589	643	1652318275810000000	Chapter_2_Assignment	dbb0f17e19dc8dbe
+2	589	1652318387430000000	CMakeFiles/Chapter_2_Assignment.dir/main.cpp.o	c26a2d4eb5632825
+589	643	1652318387480000000	Chapter_2_Assignment	dbb0f17e19dc8dbe
+3	582	1652318442230000000	CMakeFiles/Chapter_2_Assignment.dir/main.cpp.o	c26a2d4eb5632825
+582	636	1652318442280000000	Chapter_2_Assignment	dbb0f17e19dc8dbe
+3	597	1652318461860000000	CMakeFiles/Chapter_2_Assignment.dir/main.cpp.o	c26a2d4eb5632825
+597	652	1652318461920000000	Chapter_2_Assignment	dbb0f17e19dc8dbe
+3	609	1652318488110000000	CMakeFiles/Chapter_2_Assignment.dir/main.cpp.o	c26a2d4eb5632825
+610	664	1652318488160000000	Chapter_2_Assignment	dbb0f17e19dc8dbe

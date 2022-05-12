@@ -1,0 +1,3 @@
+/Volumes/Toolkit/2022SpringCS281/Chapter 2 Assignment/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Volumes/Toolkit/2022SpringCS281/Chapter 2 Assignment/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Volumes/Toolkit/2022SpringCS281/Chapter 2 Assignment/cmake-build-debug/CMakeFiles/Chapter_2_Assignment.dir

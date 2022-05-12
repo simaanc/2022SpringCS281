@@ -1,0 +1,13 @@
+﻿  BST.cpp
+D:\2022SpringCS281\LectureDemos\Week12DemoBroken\BST.cpp(68,11): error C2039: 'deleteNode': is not a member of 'BST'
+D:\2022SpringCS281\LectureDemos\Week12DemoBroken\BST.h(24): message : see declaration of 'BST'
+D:\2022SpringCS281\LectureDemos\Week12DemoBroken\BST.cpp(71,15): error C3861: 'findParent': identifier not found
+D:\2022SpringCS281\LectureDemos\Week12DemoBroken\BST.cpp(72,14): error C2065: 'Root': undeclared identifier
+D:\2022SpringCS281\LectureDemos\Week12DemoBroken\BST.cpp(93,12): error C2039: 'findParent': is not a member of 'BST'
+D:\2022SpringCS281\LectureDemos\Week12DemoBroken\BST.h(24): message : see declaration of 'BST'
+D:\2022SpringCS281\LectureDemos\Week12DemoBroken\BST.cpp(101,1): error C2556: 'bool BST::deleteItem(int)': overloaded function differs only by return type from 'void BST::deleteItem(int)'
+D:\2022SpringCS281\LectureDemos\Week12DemoBroken\BST.h(41): message : see declaration of 'BST::deleteItem'
+D:\2022SpringCS281\LectureDemos\Week12DemoBroken\BST.cpp(100,11): error C2371: 'BST::deleteItem': redefinition; different basic types
+D:\2022SpringCS281\LectureDemos\Week12DemoBroken\BST.h(41): message : see declaration of 'BST::deleteItem'
+  Source.cpp
+  Generating Code...
